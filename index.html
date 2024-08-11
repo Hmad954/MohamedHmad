@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>المهندس المعماري</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -225,6 +226,50 @@
             cursor: pointer;
             z-index: 2000;
         }
+
+        .carousel {
+            display: flex;
+            overflow: hidden;
+            position: relative;
+            max-width: 100%;
+            margin: 20px auto;
+        }
+
+        .carousel img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .carousel-control.prev {
+            left: 10px;
+        }
+
+        .carousel-control.next {
+            right: 10px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            text-align: left;
+        }
+
+        .team-member img {
+            margin-right: 20px;
+        }
     </style>
 </head>
 <body>
@@ -250,13 +295,17 @@
             <div class="team">
                 <div class="team-member">
                     <img src="team1.jpg" alt="عضو الفريق 1">
-                    <h3>اسم عضو الفريق 1</h3>
-                    <p>وظيفته أو وصفه.</p>
+                    <div>
+                        <h3>اسم عضو الفريق 1</h3>
+                        <p>وظيفته أو وصفه.</p>
+                    </div>
                 </div>
                 <div class="team-member">
                     <img src="team2.jpg" alt="عضو الفريق 2">
-                    <h3>اسم عضو الفريق 2</h3>
-                    <p>وظيفته أو وصفه.</p>
+                    <div>
+                        <h3>اسم عضو الفريق 2</h3>
+                        <p>وظيفته أو وصفه.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -265,6 +314,12 @@
     <section id="projects">
         <div class="content">
             <h2>المشاريع</h2>
+            <div class="carousel">
+                <img src="project1.jpg" alt="مشروع 1">
+                <img src="project2.jpg" alt="مشروع 2">
+                <button class="carousel-control prev">&#9664;</button>
+                <button class="carousel-control next">&#9654;</button>
+            </div>
             <div class="project-gallery">
                 <div class="project">
                     <img src="project1.jpg" alt="مشروع 1">
@@ -291,15 +346,15 @@
             <p>رقم التواصل: <a href="tel:+966501234567">+966 50 123 4567</a></p>
             <p>البريد الإلكتروني: <a href="mailto:example@email.com">example@email.com</a></p>
             <p>واتساب: <a href="https://wa.me/966501234567">تواصل عبر الواتساب</a></p>
-            <form action="#" method="post">
+            <form action="https://example.com/send" method="post" id="contactForm">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="الاسم" required>
+                    <input type="text" class="form-control" name="name" placeholder="الاسم" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="البريد الإلكتروني" required>
+                    <input type="email" class="form-control" name="email" placeholder="البريد الإلكتروني" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" rows="4" placeholder="رسالتك" required></textarea>
+                    <textarea class="form-control" name="message" rows="4" placeholder="رسالتك" required></textarea>
                 </div>
                 <button type="submit" class="btn">إرسال</button>
             </form>
@@ -356,6 +411,30 @@
 
         // Initialize map (placeholder, replace with actual map implementation)
         document.getElementById('map').innerHTML = '<p>خريطة تفاعلية هنا</p>';
+
+        // Carousel functionality
+        const prevButton = document.querySelector('.carousel-control.prev');
+        const nextButton = document.querySelector('.carousel-control.next');
+        const slides = document.querySelectorAll('.carousel img');
+        let currentSlide = 0;
+
+        const showSlide = (index) => {
+            slides.forEach((slide, i) => {
+                slide.style.transform = `translateX(${(i - index) * 100}%)`;
+            });
+        };
+
+        prevButton.addEventListener('click', () => {
+            currentSlide = (currentSlide > 0) ? currentSlide - 1 : slides.length - 1;
+            showSlide(currentSlide);
+        });
+
+        nextButton.addEventListener('click', () => {
+            currentSlide = (currentSlide < slides.length - 1) ? currentSlide + 1 : 0;
+            showSlide(currentSlide);
+        });
+
+        showSlide(currentSlide);
     </script>
 </body>
 </html>
