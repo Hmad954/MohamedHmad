@@ -9,12 +9,12 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #f4f4f4;
             color: #333;
         }
 
         header {
-            background-color: #222;
+            background-color: #000;
             color: #fff;
             padding: 20px;
             text-align: center;
@@ -22,33 +22,54 @@
             width: 100%;
             top: 0;
             z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         header .logo h1 {
             margin: 0;
-            font-size: 32px;
-            color: gold;
+            font-size: 36px;
+            color: #ffd700;
         }
 
         nav ul {
             list-style: none;
             padding: 0;
+            margin: 10px 0 0;
         }
 
         nav ul li {
             display: inline;
-            margin: 0 10px;
+            margin: 0 15px;
         }
 
         nav ul li a {
             color: #fff;
             text-decoration: none;
             font-weight: bold;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #ffd700;
         }
 
         section {
-            padding: 80px 40px 40px; /* Adjusted padding for fixed header */
+            padding: 80px 20px 40px; /* Adjusted padding for fixed header */
             text-align: center;
+        }
+
+        .content {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        .project-gallery, .testimonials, .team, .news {
+            margin: 20px 0;
         }
 
         .project-gallery {
@@ -58,14 +79,23 @@
         }
 
         .project {
-            margin: 10px;
+            margin: 15px;
             max-width: 300px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .project img {
             width: 100%;
             height: auto;
-            border-radius: 8px;
+            display: block;
+        }
+
+        .project:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
         }
 
         #map {
@@ -73,13 +103,14 @@
             height: 400px;
             background-color: #ccc;
             border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
 
         footer {
-            background-color: #222;
+            background-color: #000;
             color: #fff;
             text-align: center;
-            padding: 10px;
+            padding: 15px;
             position: fixed;
             width: 100%;
             bottom: 0;
@@ -87,57 +118,112 @@
 
         .dark-mode {
             background-color: #333;
-            color: #f5f5f5;
+            color: #f4f4f4;
         }
 
         .dark-mode header {
-            background-color: #111;
+            background-color: #222;
         }
 
         .dark-mode footer {
-            background-color: #111;
+            background-color: #222;
         }
 
-        .content {
-            margin: 0 auto;
-            max-width: 1200px;
-            padding: 20px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            background-color: #fff;
-        }
-
-        .testimonials, .news, .team, .blog {
-            margin: 20px 0;
-        }
-
-        .testimonials, .team {
+        .team, .testimonials, .news {
             display: flex;
-            justify-content: space-around;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .testimonial, .team-member {
+        .team-member, .testimonial {
             border: 1px solid #ddd;
             border-radius: 8px;
-            padding: 15px;
+            padding: 20px;
             margin: 10px;
-            flex: 1 1 200px;
-            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+            flex: 1 1 300px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            background-color: #fff;
         }
 
-        .testimonial img, .team-member img {
+        .team-member img, .testimonial img {
             border-radius: 50%;
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
         }
 
-        .testimonial p, .team-member p {
+        .team-member h3, .testimonial h3 {
             margin: 10px 0;
         }
 
-        .testimonial h3, .team-member h3 {
+        .news .article {
+            border-bottom: 1px solid #ddd;
+            padding: 20px 0;
+            margin: 10px 0;
+        }
+
+        .news .article:last-child {
+            border-bottom: none;
+        }
+
+        .news .article h3 {
             margin: 0;
+            font-size: 24px;
+        }
+
+        .news .article p {
+            margin: 10px 0;
+            font-size: 16px;
+        }
+
+        .news .article a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .news .article a:hover {
+            text-decoration: underline;
+        }
+
+        .form-control {
+            margin: 10px 0;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            width: calc(100% - 22px);
+            font-size: 16px;
+        }
+
+        .form-group {
+            margin: 15px 0;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            background-color: #ffd700;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e5c100;
+        }
+
+        .header-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            padding: 10px 20px;
+            background-color: #000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 2000;
         }
     </style>
 </head>
@@ -205,6 +291,18 @@
             <p>رقم التواصل: <a href="tel:+966501234567">+966 50 123 4567</a></p>
             <p>البريد الإلكتروني: <a href="mailto:example@email.com">example@email.com</a></p>
             <p>واتساب: <a href="https://wa.me/966501234567">تواصل عبر الواتساب</a></p>
+            <form action="#" method="post">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="الاسم" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="البريد الإلكتروني" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" rows="4" placeholder="رسالتك" required></textarea>
+                </div>
+                <button type="submit" class="btn">إرسال</button>
+            </form>
         </div>
     </section>
 
@@ -212,7 +310,6 @@
         <div class="content">
             <h2>مدونة</h2>
             <div class="news">
-                <!-- يمكنك إضافة المقالات هنا -->
                 <div class="article">
                     <h3>عنوان المقالة 1</h3>
                     <p>مقتطف من المقالة...</p>
@@ -249,27 +346,13 @@
         <p>&copy; 2024 اسم المهندس المعماري. جميع الحقوق محفوظة.</p>
     </footer>
 
+    <button class="header-button" onclick="toggleDarkMode()">تبديل الوضع</button>
+
     <script>
         // Example JavaScript for dark mode toggle
         const toggleDarkMode = () => {
             document.body.classList.toggle('dark-mode');
         };
-
-        // Create a button for dark mode toggle
-        const button = document.createElement('button');
-        button.textContent = 'تبديل الوضع';
-        button.style.position = 'fixed';
-        button.style.top = '20px';
-        button.style.right = '20px';
-        button.style.padding = '10px 20px';
-        button.style.backgroundColor = '#222';
-        button.style.color = '#fff';
-        button.style.border = 'none';
-        button.style.borderRadius = '5px';
-        button.style.cursor = 'pointer';
-        document.body.appendChild(button);
-
-        button.addEventListener('click', toggleDarkMode);
 
         // Initialize map (placeholder, replace with actual map implementation)
         document.getElementById('map').innerHTML = '<p>خريطة تفاعلية هنا</p>';
