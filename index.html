@@ -18,6 +18,10 @@
             color: #fff;
             padding: 20px;
             text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
         }
 
         header .logo h1 {
@@ -43,7 +47,7 @@
         }
 
         section {
-            padding: 40px;
+            padding: 80px 40px 40px; /* Adjusted padding for fixed header */
             text-align: center;
         }
 
@@ -93,6 +97,48 @@
         .dark-mode footer {
             background-color: #111;
         }
+
+        .content {
+            margin: 0 auto;
+            max-width: 1200px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            background-color: #fff;
+        }
+
+        .testimonials, .news, .team, .blog {
+            margin: 20px 0;
+        }
+
+        .testimonials, .team {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .testimonial, .team-member {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            flex: 1 1 200px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+
+        .testimonial img, .team-member img {
+            border-radius: 50%;
+            width: 80px;
+            height: 80px;
+        }
+
+        .testimonial p, .team-member p {
+            margin: 10px 0;
+        }
+
+        .testimonial h3, .team-member h3 {
+            margin: 0;
+        }
     </style>
 </head>
 <body>
@@ -106,6 +152,7 @@
                 <li><a href="#projects">المشاريع</a></li>
                 <li><a href="#locations">أماكن المنتجات</a></li>
                 <li><a href="#contact">التواصل</a></li>
+                <li><a href="#blog">مدونة</a></li>
             </ul>
         </nav>
     </header>
@@ -114,6 +161,18 @@
         <div class="content">
             <h2>عن المهندس</h2>
             <p>نص يصف المهندس المعماري وخبراته ومشاريعه السابقة...</p>
+            <div class="team">
+                <div class="team-member">
+                    <img src="team1.jpg" alt="عضو الفريق 1">
+                    <h3>اسم عضو الفريق 1</h3>
+                    <p>وظيفته أو وصفه.</p>
+                </div>
+                <div class="team-member">
+                    <img src="team2.jpg" alt="عضو الفريق 2">
+                    <h3>اسم عضو الفريق 2</h3>
+                    <p>وظيفته أو وصفه.</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -146,6 +205,43 @@
             <p>رقم التواصل: <a href="tel:+966501234567">+966 50 123 4567</a></p>
             <p>البريد الإلكتروني: <a href="mailto:example@email.com">example@email.com</a></p>
             <p>واتساب: <a href="https://wa.me/966501234567">تواصل عبر الواتساب</a></p>
+        </div>
+    </section>
+
+    <section id="blog">
+        <div class="content">
+            <h2>مدونة</h2>
+            <div class="news">
+                <!-- يمكنك إضافة المقالات هنا -->
+                <div class="article">
+                    <h3>عنوان المقالة 1</h3>
+                    <p>مقتطف من المقالة...</p>
+                    <a href="#">اقرأ المزيد</a>
+                </div>
+                <div class="article">
+                    <h3>عنوان المقالة 2</h3>
+                    <p>مقتطف من المقالة...</p>
+                    <a href="#">اقرأ المزيد</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="testimonials">
+        <div class="content">
+            <h2>شهادات العملاء</h2>
+            <div class="testimonials">
+                <div class="testimonial">
+                    <img src="client1.jpg" alt="عميل 1">
+                    <h3>اسم العميل 1</h3>
+                    <p>"شهادة العميل 1 هنا."</p>
+                </div>
+                <div class="testimonial">
+                    <img src="client2.jpg" alt="عميل 2">
+                    <h3>اسم العميل 2</h3>
+                    <p>"شهادة العميل 2 هنا."</p>
+                </div>
+            </div>
         </div>
     </section>
 
