@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المهندس المعماري</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        header {
+            background-color: #222;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header .logo h1 {
+            margin: 0;
+            font-size: 32px;
+            color: gold;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 40px;
+            text-align: center;
+        }
+
+        .project-gallery {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .project {
+            margin: 10px;
+            max-width: 300px;
+        }
+
+        .project img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        #map {
+            width: 100%;
+            height: 400px;
+            background-color: #ccc;
+            border-radius: 8px;
+        }
+
+        footer {
+            background-color: #222;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .dark-mode {
+            background-color: #333;
+            color: #f5f5f5;
+        }
+
+        .dark-mode header {
+            background-color: #111;
+        }
+
+        .dark-mode footer {
+            background-color: #111;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>اسم المهندس المعماري</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#about">عن المهندس</a></li>
+                <li><a href="#projects">المشاريع</a></li>
+                <li><a href="#locations">أماكن المنتجات</a></li>
+                <li><a href="#contact">التواصل</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="about">
+        <div class="content">
+            <h2>عن المهندس</h2>
+            <p>نص يصف المهندس المعماري وخبراته ومشاريعه السابقة...</p>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="content">
+            <h2>المشاريع</h2>
+            <div class="project-gallery">
+                <div class="project">
+                    <img src="project1.jpg" alt="مشروع 1">
+                    <p>وصف المشروع 1</p>
+                </div>
+                <div class="project">
+                    <img src="project2.jpg" alt="مشروع 2">
+                    <p>وصف المشروع 2</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="locations">
+        <div class="content">
+            <h2>أماكن المنتجات</h2>
+            <div id="map"></div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="content">
+            <h2>التواصل</h2>
+            <p>رقم التواصل: <a href="tel:+966501234567">+966 50 123 4567</a></p>
+            <p>البريد الإلكتروني: <a href="mailto:example@email.com">example@email.com</a></p>
+            <p>واتساب: <a href="https://wa.me/966501234567">تواصل عبر الواتساب</a></p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 اسم المهندس المعماري. جميع الحقوق محفوظة.</p>
+    </footer>
+
+    <script>
+        // Example JavaScript for dark mode toggle
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode');
+        };
+
+        // Create a button for dark mode toggle
+        const button = document.createElement('button');
+        button.textContent = 'تبديل الوضع';
+        button.style.position = 'fixed';
+        button.style.top = '20px';
+        button.style.right = '20px';
+        button.style.padding = '10px 20px';
+        button.style.backgroundColor = '#222';
+        button.style.color = '#fff';
+        button.style.border = 'none';
+        button.style.borderRadius = '5px';
+        button.style.cursor = 'pointer';
+        document.body.appendChild(button);
+
+        button.addEventListener('click', toggleDarkMode);
+
+        // Initialize map (placeholder, replace with actual map implementation)
+        document.getElementById('map').innerHTML = '<p>خريطة تفاعلية هنا</p>';
+    </script>
+</body>
+</html>
